@@ -1,0 +1,75 @@
+.current {
+  position: relative;
+  width: stretch;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.current-day {
+  font-size: 24px;
+  font-weight: 500;
+  display: block;
+  padding: 10px 0 20px 0;
+}
+
+.current .description {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.current .description span {
+  font-size: 25px;
+  margin-right: 200px;
+}
+
+.current .description .descIcon {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  font-size: 150px;
+}
+
+.current .temperature,
+.current .wind {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 650px) {
+  .current {
+    font-size: 18px;
+    padding-left: 3%;
+  }
+  .current-day {
+    font-size: 20px;
+  }
+  .current .description {
+    margin-bottom: 10px;
+  }
+  .current .description span {
+    font-size: 18px;
+    margin-right: 120px;
+  }
+  .current .description .descIcon {
+    font-size: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .current .temperature,
+  .current .wind {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .current .description {
+    font-size: 80%;
+  }
+  .current .description span {
+    font-size: 16px;
+    margin-right: 90px;
+  }
+  .current .description .descIcon {
+    font-size: 75px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

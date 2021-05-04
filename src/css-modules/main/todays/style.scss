@@ -1,0 +1,72 @@
+.current {
+    position: relative;
+    width: stretch;
+    font-size: 20px;
+    padding-left:20px;
+    &-day {
+        font-size: 24px;
+        font-weight: 500;
+        display: block;
+        padding:10px 0 20px 0;
+    }
+    .description{
+        margin-bottom: 20px;
+        display: flex;
+        
+        span {
+            font-size: 25px;
+            margin-right:200px;
+        }
+        .descIcon {
+            position: absolute;
+            right:5%;
+            bottom:0;
+            font-size:150px;
+        }
+    }
+    .temperature,
+    .wind {
+        margin-bottom: 20px;
+  }
+   
+    
+    
+    @media only screen and (max-width:650px){
+        font-size: 18px;
+        padding-left: 3%;
+        &-day {
+            font-size: 20px;
+        }
+        .description {
+            margin-bottom: 10px;
+            span {
+                font-size: 18px;
+                margin-right:120px;
+
+            }
+            .descIcon {
+                font-size:100px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+            .temperature,
+            .wind {
+                margin-bottom: 10px;
+            }
+    }
+    @media only screen and (max-width:350px){
+        .description {
+            font-size: 80%;
+            span {
+                font-size: 16px;
+                margin-right:90px;
+
+            }            
+            .descIcon {
+                font-size:75px;
+            }
+        }
+    }
+}
+

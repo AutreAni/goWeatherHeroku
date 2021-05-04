@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import Navigation from './navigation/Navigation';
+import { useState } from 'react';
+import Main from './main/Main';
 
-function App() {
+const App = () => {
+  const [capital, setCapital ] = useState('Yerevan');
+  const [searchValue, setSearchValue] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const handleSearchValue = text =>  setSearchValue(text);
+
+  const handleSubmit = text => {
+    if( loading ) return;
+    setSubmitted(true);
+    setCapital(text);
+    setLoading(true);
+    setSearchValue("");
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Navigation
+       searchValue = { searchValue }
+       handleSearchValue =  { handleSearchValue }
+       capital = { capital }
+       handleSubmit = { handleSubmit }
+       submitted = {submitted }
+     />
+    <Main 
+       capital = { capital }
+       handleSubmit = { handleSubmit }
+       submitted = { submitted }
+       handleLoading = { setLoading }
+       loading = { loading }
+     />  
+   </div>
   );
 }
 

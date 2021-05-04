@@ -1,0 +1,39 @@
+@import '../config';
+@import '../utils';
+
+.main {
+    padding:3% 0;
+    color:$font-color;
+    .icon {
+        margin-right: 10px;
+    }
+    .card {
+        width:60%;
+        margin:0 auto;
+        background-color: white;
+        box-shadow: 2px 2px 8px rgba(47,47,47,0.1);
+        padding:10px;
+        .location {
+            display: flex;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 500;
+            padding: 1% 0 2%;
+            border-bottom: 1px solid rgba(47,47,47,0.1);
+        }
+        @media only screen and(max-width:1024px) {
+           width:80%;
+        }
+        @media only screen and(max-width:850px) {
+            width:95%;
+         }
+    }
+    .content-wrapper{
+        @extend %flex-box;
+        align-items: flex-start;
+        padding:10px 0;
+        @media only screen and(max-width:650px) {
+            flex-direction: column;
+         }
+    }
+}

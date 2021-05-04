@@ -1,0 +1,65 @@
+@import '../config';
+@import '../utils';
+
+.navigation {
+    background-color: $bg-dark;
+    @extend %flex-box;
+
+    &__wrapper {
+        padding:10px 0;
+       @extend %flex-box;
+ 
+    .logo {
+        color:white;
+        font-size: 25px;
+        font-weight: 500;
+        font-family: $font;
+        letter-spacing: .7px;
+        span {
+            padding-left:5px;
+        }
+    }
+    .icon {
+        color:$yellow;
+    }
+    .search-form {
+        position: relative;
+        width:300px;
+        input {
+            font-size: 17px;
+            width:100%;
+            padding: 10px 15px;
+            border:none;
+            outline: none;
+        }
+        .icon {
+            position: absolute;
+            right:15px;
+            top:50%;
+            transform: translateY(-50%);
+            color:white;
+            font-size: 20px; 
+            z-index:99;  
+            cursor: pointer;        
+        }
+        &::after {
+            position: absolute;
+            right:0; 
+            top:0;
+            content: "";
+            background-color: $yellow;
+            width:50px;
+            height: 100%;
+        } 
+        @media only screen and (max-width:450px){
+            width:100%;
+    }
+    }
+    @media only screen and (max-width:850px){
+        flex-direction: column;
+        .logo {
+            padding-bottom: 15px;
+        }
+    }
+ }
+}
